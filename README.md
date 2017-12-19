@@ -12,7 +12,21 @@ Simple library for showing the input progress
 
 ### Download
 
-Download the project and add to your Gradle:
+You can add the library to your project using Gradle.
+1) Copy the **InputProgressView** directory to your project's directory;
+3) Find the **settings.gradle** file. Most likely, it contains something like that:
+
+```gradle
+include ':app'
+```
+
+Edit the line this way:
+
+```gradle
+include ':app', ':inputprogressview'
+```
+
+4) Add this line to your dependencies in your app's gradle:
 
 ```gradle
 compile project(':inputprogressview')
