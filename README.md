@@ -3,6 +3,7 @@
 ![alt tag](https://i.imgur.com/IIDZ9a4.gif)
 
 Examples:
+
 ![alt tag](https://i.imgur.com/kUcFTo0.gif)
 
 ![alt tag](https://i.imgur.com/icTpROc.gif)
