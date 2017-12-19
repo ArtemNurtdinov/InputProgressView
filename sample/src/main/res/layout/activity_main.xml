@@ -1,100 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fill_previous = false"/>
-
-    <com.nefrit.inputprogressview.gui.InputProgressView
-        android:id="@+id/ipv_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        app:max_progress="5"
-        app:fill_previous="false"
-        app:progress="4"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fill_previous = true"/>
-
-    <com.nefrit.inputprogressview.gui.InputProgressView
-        android:id="@+id/ipv_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        app:max_progress="5"
-        app:fill_previous="true"
-        app:progress="4"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="custom drawables"/>
-
-    <com.nefrit.inputprogressview.gui.InputProgressView
-        android:id="@+id/ipv_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        app:max_progress="5"
-        app:fill_previous="true"
-        app:progress="4"
-        app:background_filled="@drawable/background_filled"
-        app:background_empty="@drawable/background_empty"/>
-
-    <com.nefrit.inputprogressview.gui.InputProgressView
-        android:id="@+id/ipv_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        app:max_progress="5"
-        app:fill_previous="true"
-        app:progress="4"
-        app:background_filled="@mipmap/ic_lock_black_24dp"
-        app:background_empty="@mipmap/ic_lock_outline_black_24dp"/>
-
-    <TextView
-        android:id="@+id/tv_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="progress = 4"/>
-
-    <SeekBar
-        android:id="@+id/seek_bar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="5"
-        android:progress="3"
-        android:layout_margin="16dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <com.nefrit.inputprogressview.gui.InputProgressView
-        android:id="@+id/ipv_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        app:max_progress="5"
-        app:fill_previous="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fill_previous = false"/>
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Start"/>
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="5"
+            app:fill_previous="false"
+            app:progress="4"/>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fill_previous = true"/>
+
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="5"
+            app:fill_previous="true"
+            app:progress="4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="custom drawables"/>
+
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="5"
+            app:fill_previous="true"
+            app:progress="4"
+            app:background_filled="@drawable/background_filled"
+            app:background_empty="@drawable/background_empty"/>
+
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="5"
+            app:fill_previous="true"
+            app:progress="4"
+            app:background_filled="@mipmap/ic_lock_black_24dp"
+            app:background_empty="@mipmap/ic_lock_outline_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="different sizes and max_progress"/>
+
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_size_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="8"
+            app:fill_previous="true"
+            app:progress="4"
+            app:item_size="14dp"
+            app:item_margin="4dp"
+            app:background_filled="@drawable/background_filled"
+            app:background_empty="@drawable/background_empty"/>
+
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_size_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="3"
+            app:fill_previous="false"
+            app:progress="4"
+            app:item_size="32dp"
+            app:item_margin="6dp"
+            app:background_filled="@drawable/background_filled"
+            app:background_empty="@drawable/background_empty"/>
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="progress = 4"/>
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:progress="3"
+            android:layout_margin="16dp"/>
+
+        <com.nefrit.inputprogressview.gui.InputProgressView
+            android:id="@+id/ipv_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:max_progress="5"
+            app:fill_previous="true"/>
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Start"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -17,6 +17,8 @@ public class SampleActivity extends AppCompatActivity implements SeekBar.OnSeekB
 	private InputProgressView inputProgressView3;
 	private InputProgressView inputProgressView4;
 	private InputProgressView inputProgressView5;
+	private InputProgressView inputProgressViewSize1;
+	private InputProgressView inputProgressViewSize2;
 
 	private TextView tvProgress;
 
@@ -34,6 +36,8 @@ public class SampleActivity extends AppCompatActivity implements SeekBar.OnSeekB
 		inputProgressView3 = findViewById(R.id.ipv_3);
 		inputProgressView4 = findViewById(R.id.ipv_4);
 		inputProgressView5 = findViewById(R.id.ipv_5);
+		inputProgressViewSize1 = findViewById(R.id.ipv_size_1);
+		inputProgressViewSize2 = findViewById(R.id.ipv_size_2);
 		seekBar = findViewById(R.id.seek_bar);
 		tvProgress = findViewById(R.id.tv_progress);
 		btnStart = findViewById(R.id.btn_start);
@@ -49,6 +53,8 @@ public class SampleActivity extends AppCompatActivity implements SeekBar.OnSeekB
 		inputProgressView2.setProgress(progress);
 		inputProgressView3.setProgress(progress);
 		inputProgressView4.setProgress(progress);
+		inputProgressViewSize1.setProgress(progress);
+		inputProgressViewSize2.setProgress(progress);
 		String progressStr = "progress = " +progress;
 		tvProgress.setText(progressStr);
 	}

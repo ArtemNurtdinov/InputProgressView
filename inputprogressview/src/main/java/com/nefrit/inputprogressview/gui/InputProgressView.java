@@ -111,15 +111,15 @@ public class InputProgressView extends LinearLayout {
 		if (currentProgress == 0) {
 			return;
 		}
-		if (currentProgress - 1 >= maxProgress) {
-			currentProgress = maxProgress - 1;
+		if (currentProgress > maxProgress) {
+			currentProgress = maxProgress;
 		}
 		if (fillPrevious) {
 			for (int i = 0; i < currentProgress ; i++) {
 				circles[i].setBackground(filledDrawable);
 			}
 		} else {
-			circles[currentProgress - 1].setBackground(filledDrawable);
+			circles[currentProgress-1].setBackground(filledDrawable);
 		}
 	}
 

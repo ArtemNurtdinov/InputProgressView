@@ -1,6 +1,6 @@
 # InputProgressView
 
-![alt tag](https://i.imgur.com/PdMBUDh.gif)
+![alt tag](https://i.imgur.com/EjKvf2b.gif)
 
 Examples:
 
