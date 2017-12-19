@@ -1,6 +1,6 @@
 # InputProgressView
 
-![alt tag](https://i.imgur.com/IIDZ9a4.gif)
+![alt tag](https://i.imgur.com/PdMBUDh.gif)
 
 Examples:
 
@@ -31,24 +31,24 @@ Add `InputProgressView` to your layout:
 
 If you want, you can create your custom drawables for each progress state:
 
-For example, `background_ipv_filled.xml`
+For example, `background_filled.xml`
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
-    <solid android:color="#000"/>
+    <solid android:color="#C2185B"/>
 </shape>
 ```
 
-and `background_ipv_empty.xml`
+and `background_empty.xml`
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
     <stroke
         android:width="2dp"
-        android:color="#000"/>
+        android:color="#C2185B"/>
        
     <solid android:color="@android:color/transparent" />
 </shape>

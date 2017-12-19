@@ -51,6 +51,18 @@
         app:max_progress="5"
         app:fill_previous="true"
         app:progress="4"
+        app:background_filled="@drawable/background_filled"
+        app:background_empty="@drawable/background_empty"/>
+
+    <com.nefrit.inputprogressview.gui.InputProgressView
+        android:id="@+id/ipv_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        app:max_progress="5"
+        app:fill_previous="true"
+        app:progress="4"
         app:background_filled="@mipmap/ic_lock_black_24dp"
         app:background_empty="@mipmap/ic_lock_outline_black_24dp"/>
 
@@ -70,7 +82,7 @@
         android:layout_margin="16dp"/>
 
     <com.nefrit.inputprogressview.gui.InputProgressView
-        android:id="@+id/ipv_4"
+        android:id="@+id/ipv_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
