@@ -104,22 +104,22 @@ public class InputProgressView extends LinearLayout {
 		if (currentProgress < 0) {
 			throw new ArrayIndexOutOfBoundsException("current progress must be >= 0");
 		}
+		progress = currentProgress;
 		for (View v: circles) {
 			v.setBackground(emptyDrawable);
 		}
 		if (currentProgress == 0) {
 			return;
 		}
-		progress = currentProgress - 1;
-		if (progress >= maxProgress) {
-			progress = maxProgress - 1;
+		if (currentProgress - 1 >= maxProgress) {
+			currentProgress = maxProgress - 1;
 		}
 		if (fillPrevious) {
-			for (int i = 0; i <= progress; i++) {
+			for (int i = 0; i < currentProgress ; i++) {
 				circles[i].setBackground(filledDrawable);
 			}
 		} else {
-			circles[progress].setBackground(filledDrawable);
+			circles[currentProgress - 1].setBackground(filledDrawable);
 		}
 	}
 
