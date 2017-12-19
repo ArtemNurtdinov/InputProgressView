@@ -20,6 +20,11 @@ public class InputProgressView extends LinearLayout {
 	private int progress;
 	private int maxProgress;
 
+	private int itemSize;
+	private int itemMargin;
+
+	private boolean fillPrevious;
+
 	private Drawable emptyDrawable;
 	private Drawable filledDrawable;
 
@@ -35,6 +40,10 @@ public class InputProgressView extends LinearLayout {
 			maxProgress = attributes.getInteger(R.styleable.InputProgressView_max_progress, DEFAULT_MAX_PROGRESS);
 			emptyDrawable = attributes.getDrawable(R.styleable.InputProgressView_background_empty);
 			filledDrawable = attributes.getDrawable(R.styleable.InputProgressView_background_filled);
+			fillPrevious = attributes.getBoolean(R.styleable.InputProgressView_fill_previous, false);
+			progress = attributes.getInteger(R.styleable.InputProgressView_progress, 0);
+			itemSize = attributes.getDimensionPixelSize(R.styleable.InputProgressView_item_size, -1);
+			itemMargin = attributes.getDimensionPixelSize(R.styleable.InputProgressView_item_margin, -1);
 
 			attributes.recycle();
 		}
@@ -58,20 +67,25 @@ public class InputProgressView extends LinearLayout {
 
 		DisplayMetrics dm = context.getResources().getDisplayMetrics();
 
-		int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, dm);
-		int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, dm);
+		if (itemSize == -1) {
+			itemSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, dm);
+		}
+		if (itemMargin == -1) {
+			itemMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, dm);
+		}
 
 		circles = new View[maxProgress];
 
 		for (int i = 0; i < maxProgress; i++) {
 			View circle = new View(context);
-			LayoutParams params = new LayoutParams(size, size);
-			params.setMargins(margin, 0, margin, 0);
+			LayoutParams params = new LayoutParams(itemSize, itemSize);
+			params.setMargins(itemMargin, 0, itemMargin, 0);
 			circle.setLayoutParams(params);
-			circle.setBackground(emptyDrawable);
 			addView(circle);
 			circles[i] = circle;
 		}
+
+		setProgress(progress);
 	}
 
 	public int getProgress() {
@@ -86,21 +100,26 @@ public class InputProgressView extends LinearLayout {
 		this.progressChangeListener = progressChangeListener;
 	}
 
-	public void setProgress(int progress) {
-		if (progress > maxProgress) {
+	public void setProgress(int currentProgress) {
+		if (currentProgress < 0) {
+			throw new ArrayIndexOutOfBoundsException("current progress must be >= 0");
+		}
+		for (View v: circles) {
+			v.setBackground(emptyDrawable);
+		}
+		if (currentProgress == 0) {
 			return;
 		}
-		this.progress = progress;
-		for (int i = 0; i < progress; i++) {
-			circles[i].setBackground(filledDrawable);
+		progress = currentProgress - 1;
+		if (progress >= maxProgress) {
+			progress = maxProgress - 1;
 		}
-
-		for (int i = progress; i < maxProgress; i++) {
-			circles[i].setBackground(emptyDrawable);
-		}
-
-		if (progressChangeListener != null) {
-			progressChangeListener.progressChanged(progress);
+		if (fillPrevious) {
+			for (int i = 0; i <= progress; i++) {
+				circles[i].setBackground(filledDrawable);
+			}
+		} else {
+			circles[progress].setBackground(filledDrawable);
 		}
 	}
 

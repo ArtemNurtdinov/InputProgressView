@@ -5,6 +5,10 @@
         <attr name="max_progress" format="integer"/>
         <attr name="background_empty" format="reference"/>
         <attr name="background_filled" format="reference"/>
+        <attr name="fill_previous" format="boolean" />
+        <attr name="progress" format="integer" />
+        <attr name="item_size" format="dimension" />
+        <attr name="item_margin" format="dimension" />
     </declare-styleable>
 
 </resources>
