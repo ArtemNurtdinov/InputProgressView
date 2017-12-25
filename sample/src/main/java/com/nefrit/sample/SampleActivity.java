@@ -2,6 +2,7 @@ package com.nefrit.sample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -11,6 +12,8 @@ import com.nefrit.inputprogressview.gui.InputProgressView;
 
 public class SampleActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener,
 		View.OnClickListener {
+
+	private static final String TAG = "SampleActivity";
 
 	private InputProgressView inputProgressView1;
 	private InputProgressView inputProgressView2;
@@ -43,6 +46,13 @@ public class SampleActivity extends AppCompatActivity implements SeekBar.OnSeekB
 		btnStart = findViewById(R.id.btn_start);
 
 		seekBar.setOnSeekBarChangeListener(this);
+
+		inputProgressView1.setProgressChangeListener(new InputProgressView.ProgressChangeListener() {
+			@Override
+			public void progressChanged(int progress) {
+				Log.d(TAG, "onProgressChanged : " +progress);
+			}
+		});
 
 		btnStart.setOnClickListener(this);
 	}

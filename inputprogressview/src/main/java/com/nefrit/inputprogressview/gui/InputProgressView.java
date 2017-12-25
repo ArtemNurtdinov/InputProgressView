@@ -88,6 +88,12 @@ public class InputProgressView extends LinearLayout {
 		setProgress(progress);
 	}
 
+	/**
+	 * Returns the current progress
+	 * <p>Should be between 0 and {@link #maxProgress}</p>
+	 *
+	 * @see #maxProgress
+	 */
 	public int getProgress() {
 		return progress;
 	}
@@ -105,6 +111,9 @@ public class InputProgressView extends LinearLayout {
 			throw new ArrayIndexOutOfBoundsException("current progress must be >= 0");
 		}
 		progress = currentProgress;
+		if (progressChangeListener != null) {
+			progressChangeListener.progressChanged(progress);
+		}
 		for (View v: circles) {
 			v.setBackground(emptyDrawable);
 		}
