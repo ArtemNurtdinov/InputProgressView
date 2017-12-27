@@ -10,7 +10,23 @@ Examples:
 
 Simple library for showing the input progress
 
-### Download
+### Connecting
+
+You can add next dependency in your project:
+
+`com.nefrit:inputprogressview:0.1.5`
+
+For example, your gradle script will contains such dependencies: 
+```
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.nefrit:inputprogressview:0.1.5'
+}
+```
+
+Connecting via downloading 
+----------
 
 You can add the library to your project using Gradle.
 1) Copy the **InputProgressView** directory to your project's directory;
